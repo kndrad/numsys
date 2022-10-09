@@ -1,10 +1,13 @@
-package base2
+package base2_test
 
-import "testing"
+import (
+	"base2"
+	"testing"
+)
 
 func TestBase2Base10Conversion(t *testing.T) {
 	testBinary := func(binary string, expected int) {
-		if num, expected := ToBase10(binary), expected; num != expected {
+		if num, expected := base2.ToBase10(binary), expected; num != expected {
 			t.Fatalf("%v must be %v", num, expected)
 		}
 	}

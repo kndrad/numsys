@@ -6,4 +6,5 @@ use (
     ./convert
     ./convert/base10
     ./convert/base2
+    ./convert/base8
 )
