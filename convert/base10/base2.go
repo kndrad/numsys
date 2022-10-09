@@ -18,7 +18,7 @@ func ToBase2(num int) (b string) {
 	step := 1
 	printEquastionStep(step, num, factor, quotient, remainder)
 
-	// loop breaks when quotient is 0
+	// loop breaks when result is 0
 	for {
 		step++
 		remainder = quotient % factor
