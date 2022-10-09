@@ -24,12 +24,15 @@ func ToBase2(num int) (b string) {
 		remainder = quotient % factor
 		digits = append([]int{remainder}, digits...) // append next remainder at the start of digits slice
 
-		quotient = quotient / factor
-		fmt.Printf("%v) %v / %v = %v, reszta %v\n", step, quotient, factor, quotient, remainder)
+		result := quotient / factor
+		fmt.Printf("%v) %v / %v = %v, reszta %v\n", step, quotient, factor, result, remainder)
 
-		if quotient == 0 {
+		if result == 0 {
 			break
 		}
+
+		// swap so quotient is now result
+		quotient, result = result, 0
 	}
 
 	for _, digit := range digits {
