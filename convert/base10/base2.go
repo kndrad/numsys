@@ -1,6 +1,9 @@
 package base10
 
-import "fmt"
+import (
+	"fmt"
+	"represent"
+)
 
 // Does not calculate float numbers!
 // Returns number (eg. decimal) to binary number as a string.
@@ -16,7 +19,7 @@ func ToBase2(num int) (b string) {
 	quotient := num / factor
 
 	step := 1
-	printEquastionStep(step, num, factor, quotient, remainder)
+	represent.EquastionSteps(step, num, factor, quotient, remainder)
 
 	// loop breaks when result is 0
 	for {
@@ -25,7 +28,7 @@ func ToBase2(num int) (b string) {
 		digits = append([]int{remainder}, digits...) // append next remainder at the start of digits slice
 
 		result := quotient / factor
-		printEquastionStep(step, quotient, factor, result, remainder)
+		represent.EquastionSteps(step, quotient, factor, result, remainder)
 
 		if result == 0 {
 			break
@@ -39,8 +42,4 @@ func ToBase2(num int) (b string) {
 		b += fmt.Sprintf("%v", digit)
 	}
 	return
-}
-
-func printEquastionStep(step, num, factor, result, remainder int) {
-	fmt.Printf("%v) %v / %v = %v, reszta %v\n", step, num, factor, result, remainder)
 }
