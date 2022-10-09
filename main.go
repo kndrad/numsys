@@ -1,9 +1,9 @@
 package main
 
 import (
-	"base2"
+	"base16"
 )
 
 func main() {
-	base2.ToBase8("10010110")
+	base16.ToBase10("ABCDEF")
 }
