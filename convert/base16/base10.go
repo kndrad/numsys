@@ -48,7 +48,6 @@ func ToBase10(hexdecimal string) (result int) {
 
 	var factor float64 = 16
 
-
 	j := len(digits) - 1
 	for _, digit := range digits {
 		result += digit * int(math.Pow(factor, float64(j)))
