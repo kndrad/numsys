@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"notations/reprs"
+	"represent"
 )
 
 var _ = fmt.Print
 
 func main() {
-	fmt.Println(notations.ReprBase10(125))
+	fmt.Println(represent.InBase10(1255))
 }
