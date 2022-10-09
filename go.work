@@ -5,4 +5,5 @@ use (
     ./represent
     ./convert
     ./convert/base10
+    ./convert/base2
 )
