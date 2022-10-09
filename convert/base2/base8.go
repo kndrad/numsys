@@ -11,9 +11,10 @@ Converts binary number eg. 10010110 to octal number. In this case it is 226.
 Only works for binary numbers without point!
 */
 func ToBase8(binary string) int {
-	fmt.Println("z systemu binarnego na dziesietny...")
+	fmt.Println("•", binary)
+	fmt.Println("liczba", binary,"binarna na system dziesietny...")
 	decim := ToBase10(binary)
-	fmt.Println("z systemu dziesietnego na ósemkowy...")
+	fmt.Println("liczba", decim, "na ósemkowy...")
 
 	factor := 8
 	quotient, lsd := decim/factor, decim%factor
@@ -47,5 +48,6 @@ func ToBase8(binary string) int {
 	}
 
 	fmt.Println("Wynik:", num)
+	fmt.Println()
 	return num
 }
