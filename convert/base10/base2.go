@@ -25,7 +25,7 @@ func ToBase2(num int) (b string) {
 		digits = append([]int{remainder}, digits...) // append next remainder at the start of digits slice
 
 		quotient = quotient / factor
-		fmt.Printf("%v) %v / %v = %v, reszta %v\n", step, num, factor, quotient, remainder)
+		fmt.Printf("%v) %v / %v = %v, reszta %v\n", step, quotient, factor, quotient, remainder)
 
 		if quotient == 0 {
 			break
