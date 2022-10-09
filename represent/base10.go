@@ -2,8 +2,8 @@ package represent
 
 import "fmt"
 
-// represents given number in base 10 positional notation
-func InBase10(num int) (repr string) {
+// Returns string of number in base 10 positional notation
+func InBase10(num uint) (repr string) {
 	digits := fmt.Sprint(num)
 	len := len(digits)
 
