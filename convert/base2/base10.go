@@ -31,5 +31,6 @@ func ToBase10(binary string) (num int) {
 		lsb++
 	}
 	fmt.Println("Suma wyników mnożenia:", num)
+	fmt.Println()
 	return
 }
