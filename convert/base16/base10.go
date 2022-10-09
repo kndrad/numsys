@@ -27,6 +27,7 @@ var HexDecimalEquivalents map[string]string = map[string]string{
 }
 
 func ToBase10(hexdecimal string) (result int) {
+	fmt.Println("•", hexdecimal)
 	var digits []int
 
 	for _, r := range hexdecimal {
@@ -41,23 +42,24 @@ func ToBase10(hexdecimal string) (result int) {
 		if err != nil {
 			panic(err)
 		}
+		fmt.Println(key, "equals", digit, "as decim num")
 		digits = append(digits, digit)
 	}
 
-	fmt.Println(digits)
 	var factor float64 = 16
 
 
 	j := len(digits) - 1
 	for _, digit := range digits {
 		result += digit * int(math.Pow(factor, float64(j)))
+		fmt.Printf("%v * (%v^%v) = %v\n", digit, factor, j, result)
 		j--
-
 		if j < 0 {
 			break
 		}
 	}
 
-	fmt.Println(result)
+	fmt.Println("Wynik przekształcenia:", result)
+	fmt.Println()
 	return
 }
