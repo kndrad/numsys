@@ -16,7 +16,7 @@ func ToBase2(num int) (b string) {
 	quotient := num / factor
 
 	step := 1
-	fmt.Printf("%v) %v / %v = %v, reszta %v\n", step, num, factor, quotient, remainder)
+	printEquastionStep(step, num, factor, quotient, remainder)
 
 	// loop breaks when quotient is 0
 	for {
@@ -25,7 +25,7 @@ func ToBase2(num int) (b string) {
 		digits = append([]int{remainder}, digits...) // append next remainder at the start of digits slice
 
 		result := quotient / factor
-		fmt.Printf("%v) %v / %v = %v, reszta %v\n", step, quotient, factor, result, remainder)
+		printEquastionStep(step, quotient, factor, result, remainder)
 
 		if result == 0 {
 			break
@@ -39,4 +39,8 @@ func ToBase2(num int) (b string) {
 		b += fmt.Sprintf("%v", digit)
 	}
 	return
+}
+
+func printEquastionStep(step, num, factor, result, remainder int) {
+	fmt.Printf("%v) %v / %v = %v, reszta %v\n", step, num, factor, result, remainder)
 }
